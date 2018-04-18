@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2018_04_18_065201) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "exchange_rates", force: :cascade do |t|
     t.string "price_usd"
     t.string "percent_change_1h"
