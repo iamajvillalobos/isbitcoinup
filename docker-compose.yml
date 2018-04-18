@@ -6,4 +6,21 @@ services:
       - "3000:3000"
     volumes:
       - .:/app
-
+    environment:
+      - REDIS_URL=redis://redis:6379
+  redis:
+    image: redis
+    volumes:
+      - redis:/data
+  sidekiq:
+    build: .
+    command: bundle exec sidekiq
+    volumes:
+      - .:/app
+    environment:
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - web
+      - redis
+volumes:
+  redis:
