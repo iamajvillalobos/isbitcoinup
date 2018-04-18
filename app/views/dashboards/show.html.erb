@@ -1,9 +1,26 @@
-<h1>Is Bitcoin Up? <%= @status %></h1>
-<hr>
-<div>
-  <p>
-    <span>Price: $<%= @exchange_rate.price_usd %></span>&nbsp;&nbsp;
-    <span>24hr Change: <%= @exchange_rate.percent_change_24h %>%</span>&nbsp;&nbsp;
-    <span>7day Change: <%= @exchange_rate.percent_change_7d %>%</span>&nbsp;&nbsp;
-  </p>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1>Is Bitcoin Up? <%= @status %></h1>
+    </div>
+  </div>
+
+  <div class="row mt-3 text-center">
+    <div class="col-md-4">
+      <p class="price">
+      Price: $<%= @exchange_rate.price_usd %>
+      </p>
+    </div>
+    <div class="col-md-4">
+      <p class="24h_change">
+      24hr Change: <%= @exchange_rate.percent_change_24h %>%
+      </p>
+    </div>
+    <div class="col-md-4">
+      <p class="7day_change">
+      7day Change: <%= @exchange_rate.percent_change_7d %>%
+      </p>
+    </div>
+  </div>
 </div>
+
